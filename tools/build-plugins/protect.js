@@ -12,7 +12,7 @@ module.exports = function (babel) {
         var from = "/" + path.dirname(file.opts.filename.replace(/^src/, "lib"));
         var to   = "/lib/babel/tools";
 
-        var protectLoc = "./" + path.relative(from, to) + "/protect.js";
+        var protectLoc = "./" + path.relative(from, to) + "/protect";
 
         this.unshiftContainer("body", [
           t.expressionStatement(t.callExpression(file.addImport(protectLoc), [t.identifier("module")]))
